@@ -1,7 +1,9 @@
 const links = 
   [
     { "name": "Shaun's Github", "url": "https://github.com/shaungonsalves" },
-    { "name": "Shaun's Website", "url": "https://bit.ly/2RUqx3i" }
+    { "name": "Shaun's Website", "url": "https://bit.ly/2RUqx3i" },
+    { "name": "Shaun's Facebook", "url": "https://www.facebook.com/shaun.gonsalves288"},
+    { "name": "Shaun's Instagram", "url": "https://www.instagram.com/shaun.gonsalves"}
   ]
 const socials =
   [
@@ -54,12 +56,41 @@ class FontAwesomeStyleSheet {
   }
 }
 
+class UpdateName {
+  constructor(){
+  }
+  
+  async element(element){
+    element.setInnerContent("Shaun Augustin Gonsalves (shaun.gonsalves288)")
+  }
+}
+
+class UpdateTitle {
+  constructor(){
+  }
+  async element(element){
+    element.setInnerContent("Shaun Gonsalves")
+  }
+}
+
+class SetBackgroundColor {
+  constructor(color){
+    this.color = color
+  }
+  async element(element){
+    element.setAttribute("class",this.color)
+  }
+}
+
 const htmlRewriter = new HTMLRewriter()  
 .on("div#links", new LinksTransformer(links))
 .on("div#profile", new RemoveStyle())
+.on("h1#name", new UpdateName())
 .on("div#social", new RemoveStyle())
 .on("img#avatar", new AvatarTransformer("https://github.com/shaungonsalves/shaungonsalves.github.io/raw/master/img/profile.jpg"))
 .on("div#social", new LinksTransformer(socials))
+.on("title", new UpdateTitle())
+.on("body", new SetBackgroundColor('bg-indigo-800'))
 
 addEventListener('fetch', event => {
   event.respondWith(checkRequest(event.request))

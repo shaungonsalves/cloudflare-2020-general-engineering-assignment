@@ -1,15 +1,17 @@
-# 👷 `worker-template` Hello World
 
-A template for kick starting a Cloudflare worker project.
+# General Software Engineering Assignment
 
-[`index.js`](https://github.com/cloudflare/worker-template/blob/master/index.js) is the content of the Workers script.
+  
 
-#### Wrangler
+This is the solution I designed as part of my assignment while applying to be a Software Engineering Intern at Cloudflare. This assignment has been published on my github <github.com/shaungonsalves> and on my cloudflare worker.
 
-To generate using [wrangler](https://github.com/cloudflare/wrangler)
+  
 
-```
-wrangler generate projectname https://github.com/cloudflare/worker-template
-```
-
-Further documentation for Wrangler can be found [here](https://developers.cloudflare.com/workers/tooling/wrangler).
+## Some Notable Features
+ - I have completed all the mandatory and optional requirements as part
+   of this assignment.
+ - I have included SVG icons from Iconmonstr
+   <https://iconmonstr.com/license/> which allows me to use it for this
+   assignment.
+ - The background is changed to indigo-900 from the tailwind color
+   palette.
